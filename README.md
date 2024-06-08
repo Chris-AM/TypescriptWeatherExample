@@ -1,68 +1,27 @@
-# Typescript Webpack
+# WeatherProject
 
-> ECMAScript 6 project with Webpack and Typescript support for bundling and compiling to backward compatibility
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
-![Header](/meta/header.png)
+## Development server
 
-## Requirements
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-* [Node](https://nodejs.org/en/)
+## Code scaffolding
 
-## Introduction
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-* **[Webpack](https://webpack.js.org)** -> Webpack is a bundler for modules. Main purpose is to bundle JavaScript modules in a browser.
+## Build
 
-## Goal
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-The Goal of this application is to bundle all the files in development process to a single file called **bundle.js** which will be deployed as a single file with retrocompatibility.
+## Running unit tests
 
-![Webpack Flowchart](/meta/flowchart-webpack.png)
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Setup
+## Running end-to-end tests
 
-1. Download node and run the following command.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-```bash
-npm install
-```
+## Further help
 
-2. Start modifying the html, css and javascript files located in **src** folder.
-
-3. To start livewatch just run  the following command.
-
-```bash
-npm run start:dev
-```
-
-4. To deploy a new version just run `npm run build-prod`
-
-## Deployment
-
-There are two build configurations, you can [learn more here](https://webpack.js.org/configuration/mode/)
-
-To livewatch a dev environment run:
-
-```bash
-npm run start:dev
-```
-
-To create a production build:
-
-```bash
-npm run build-prod
-```
-
-To create a development build:
-
-```bash
-npm run build-dev
-```
-
-## Networking
-
-The weather information is requested by the [open weather map API](https://openweathermap.org/current). It uses a free api token uploaded to be ready to use, feel free to create a new one for personal use.
-
-## Credits
-
-The layout is based in [this project ](https://codepen.io/Call_in/pen/pMYGbZ) created by **Colin Espinas**.
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
