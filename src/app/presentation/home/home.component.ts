@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   private getWeatherByCity(city: string): void {
     this.homeService.getWeatherByCity(city).subscribe({
       next: (weather) => {
-        console.log('Weather icon ==> ', weather.icon);
         this.weather.set(weather);
       },
       error: (error) => {
