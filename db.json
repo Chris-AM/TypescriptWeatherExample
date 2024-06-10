@@ -10,11 +10,11 @@
         },
         {
             "id": "02d",
-            "name": "clearCloudy"
+            "name": "clear-cloudy"
         },
         {
             "id": "02n",
-            "name": "clearCloudy"
+            "name": "clear-cloudy"
         },
         {
             "id": "03d",
@@ -26,11 +26,11 @@
         },
         {
             "id": "04d",
-            "name": "mostlyCloudy"
+            "name": "mostly-cloudy"
         },
         {
             "id": "04n",
-            "name": "mostlyCloudy"
+            "name": "mostly-cloudy"
         },
         {
             "id": "09d",
