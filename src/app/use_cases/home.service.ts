@@ -36,7 +36,6 @@ export class HomeService {
         });
       }),
       map(({ weather, icon }) => {
-        console.log('🚀 home service ~ getWeatherByCity ~ icon', icon);
         return this.homePetition(weather, icon);
       }),
       catchError((error) => {
@@ -46,12 +45,9 @@ export class HomeService {
   }
 
   private homePetition(json: IOpenWeatherResponse, icon: IIcon[]): WeatherModel {
-    console.log('🚀 home service ~ homePetition ~ icon', icon);
-    console.log('🚀 home service ~ homePetition ~ type of icon', typeof icon);
     const weather = WeatherModel.fromJson(json, icon);
     weather.date = this.getDate();
     weather.dayOfTheWeek = this.getDayOfTheWeek();
-    console.log('🚀 home service ~ homePetition ~ weather', weather);
     return weather;
   }
 

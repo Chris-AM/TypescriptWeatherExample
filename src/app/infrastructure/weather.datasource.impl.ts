@@ -36,10 +36,6 @@ export class WeatherDataSourceImpl extends WeatherDataSource {
     const petition = this.httpClient.get<IIcon[]>(fullUrl);
     const result = petition.pipe(
       map((icons) => {
-        console.log(
-          '🚀 ~ file: weather.datasource.impl.ts ~ line 39 ~ WeatherDataSourceImpl ~ icon',
-          icons[0].name
-        );
         return icons;
       }),
       catchError((error) => {
