@@ -15,16 +15,16 @@ export class WeatherModel {
     public dayOfTheWeek: string
   ) {}
 
-  static fromJson(json: IOpenWeatherResponse, icon: IIcon): WeatherModel {
+  static fromJson(json: IOpenWeatherResponse, icon: IIcon[]): WeatherModel {
     return new WeatherModel(
-      json.main.temp_max,
-      json.main.temp_min,
-      json.main.temp,
+      Math.round(json.main.temp_max),
+      Math.round(json.main.temp_min),
+      Math.round(json.main.temp),
       json.main.humidity,
       json.name,
       json.wind.speed,
-      json.weather.map((w) => w.id).join(', '),
-      icon.name,
+      json.weather.map((w) => w.main).join(', '),
+      icon[0].name,
       '',
       ''
     );
