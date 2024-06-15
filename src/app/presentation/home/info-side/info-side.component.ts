@@ -15,6 +15,6 @@ export class InfoSideComponent {
   @Output() public searchCity = new EventEmitter<WeatherModel>();
 
   public handleSearchCity(searchTerm: WeatherModel): void {
-    this.weather = searchTerm;
+    this.searchCity.emit(searchTerm);
   }
 }

@@ -1,4 +1,4 @@
 <div class="container">
   <app-weather-side [weather]="weather()"/>
-  <app-info-side [weather]="weather()"/>
+  <app-info-side [weather]="weather()" (searchCity)="refreshCity($event)"/>
 </div>

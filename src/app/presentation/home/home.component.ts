@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { HomeService } from '../../use_cases/home.service';
 import { IWeather } from '../../domain/interfaces/open-weather.interface';
 import { WeatherModel } from '../../domain/models/weather.model';
@@ -8,6 +8,7 @@ import { InfoSideComponent } from './info-side/info-side.component';
 @Component({
   selector: 'app-home',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [WeatherSideComponent, InfoSideComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -17,6 +18,10 @@ export class HomeComponent implements OnInit {
   private homeService = inject(HomeService);
   ngOnInit(): void {
     this.getWeatherByCity('Lautaro');
+  }
+
+  public refreshCity(searchTerm: WeatherModel) {
+    this.weather.set(searchTerm);
   }
 
   private getWeatherByCity(city: string): void {
