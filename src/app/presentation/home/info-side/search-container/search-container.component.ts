@@ -3,12 +3,14 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IWeather } from '../../../../domain/interfaces/open-weather.interface';
 import { HomeService } from '../../../../use_cases/home.service';
 import { WeatherModel } from '../../../../domain/models/weather.model';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-search-container',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, SweetAlert2Module],
   templateUrl: './search-container.component.html',
   styleUrl: './search-container.component.scss',
 })
@@ -31,8 +33,11 @@ export class SearchContainerComponent {
         },
         error: (error) => {
           console.error(error);
+          Swal.fire({title: 'Error', text: 'City not found', icon: 'error'});
         },
       });
+    } else {
+      Swal.fire({title: 'Error', text: 'Please enter a city', icon: 'error'});
     }
   }
 }
