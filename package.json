@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "start:dev": "json-server db.json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:weather_project": "node dist/weather_project/server/server.mjs"
