@@ -13,8 +13,13 @@ import { SearchContainerComponent } from './search-container/search-container.co
 export class InfoSideComponent {
   @Input() public weather!: WeatherModel;
   @Output() public searchCity = new EventEmitter<WeatherModel>();
+  @Output() public isSwalFired = new EventEmitter<boolean>();
 
   public handleSearchCity(searchTerm: WeatherModel): void {
     this.searchCity.emit(searchTerm);
+  }
+
+  public handleIsSwalFired(isSwalFired: boolean): void {
+    this.isSwalFired.emit(isSwalFired);
   }
 }

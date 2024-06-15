@@ -17,6 +17,7 @@ import Swal from 'sweetalert2';
 export class SearchContainerComponent {
   @Input() public foundCity!: WeatherModel;
   @Output() public searchCity = new EventEmitter<WeatherModel>();
+  @Output() public isSwalFired = new EventEmitter<boolean>();
 
   public searchForm = new FormGroup({
     searchTerm: new FormControl('') as FormControl<string>,
@@ -30,14 +31,24 @@ export class SearchContainerComponent {
         next: (city) => {
           this.foundCity = city;
           this.searchCity.emit(city);
+          this.isSwalFired.emit(false);
         },
         error: (error) => {
           console.error(error);
+          this.isSwalFired.emit(true);
           Swal.fire({title: 'Error', text: 'City not found', icon: 'error'});
         },
       });
     } else {
-      Swal.fire({title: 'Error', text: 'Please enter a city', icon: 'error'});
+      this.isSwalFired.emit(true);
+      Swal.fire({
+        title: 'Error', 
+        text: 'Please enter a city', 
+        icon: 'error', 
+        didClose: () => {
+          this.isSwalFired.emit(false);
+        },
+      });
     }
   }
 }
